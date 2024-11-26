@@ -13,6 +13,12 @@ int digitSum(int n){
   
   return sum;
 }
+int fabonacci(int n){
+  if (n <= 1)
+    return n;
+  else
+    return (fabonacci(n-1) + fabonacci(n-2));
+}
 
 int fact(int n ){
 
@@ -32,18 +38,34 @@ int fact(int n ){
 }
 int main() {
 int num;
-int rum;
+// int rum;
 cout << "Enter a number: ";
-cin >> num >> rum;
+cin >> num;
 
-int n = fact(num);
-int r = fact(num - rum);
-int c = fact(rum);
+int sum = fabonacci(num);
 
-int sum = n / (c * r);
+cout << "Sum of Fibonacci Series till "<< num <<" is: " << sum << endl;
 
 
-cout <<"the NCR is : "<<sum << endl;
+
+
+
+
+
+
+
+
+
+
+
+// int n = fact(num);
+// int r = fact(num - rum);
+// int c = fact(rum);
+
+// int sum = n / (c * r);
+
+
+// cout <<"the NCR is : "<<sum << endl;
 
 
 
