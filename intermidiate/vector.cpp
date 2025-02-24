@@ -2,6 +2,30 @@
 #include<vector>
 using namespace std;
 
+void leetCode136(){
+  
+}
+
+
+
+int main(){
+// basicVector();
+return 0;
+}
+
+
+
+void staticAndDynamicVector(){
+  vector<int> daynamicVec;
+  daynamicVec.push_back(1);
+  daynamicVec.push_back(2);
+  cout << "dynaamic size of vec = " << daynamicVec.size() << endl;
+
+  int staticVec[5] = {1,2,3,4,5};
+  cout << "static size of vec = " << sizeof(staticVec)/sizeof(staticVec[0]) << endl;
+
+  cout << "static size of vec = " << daynamicVec.size() << endl;
+};
 
 
 void basicVector(){
@@ -30,9 +54,4 @@ void basicVector(){
   cout  << "size of vec = " << vec.size() << endl;
   cout << "capacity of vec = " << vec.capacity() << endl;
 
-}
-
-int main(){
-basicVector();
-return 0;
 }
