@@ -3,6 +3,44 @@
 #include <vector>
 using namespace std;
 
+void printArray(int arr[], int len){
+  cout << "size of arr :" <<  sizeof(arr) << endl;
+  for (int i = 0; i <len; i++)
+  {
+    cout << arr[i] << " ";
+  }
+  cout<< endl;
+}
+
+
+void rotateArrayByOne(int arr[], int len){
+  int temp = arr[len-1];
+  //yt bhaiya
+  for (int i = len-2; i >= 0; i--)
+  {
+    arr[i + 1] = arr[i];
+  }
+  // arr[0] = temp;
+}
+
+
+
+
+int main() {
+  int arr[] = {1, 2, 3, 4, 5}; 
+  int len = sizeof(arr)/sizeof(arr[0]);
+  // secondMax(arr, len);
+  // fintMissing(arr, len, 6);
+  // fabonacci(1);
+  printArray(arr, len);
+  rotateArrayByOne(arr, len);
+  cout << "after " << endl;
+  printArray(arr, len);
+  return 0; 
+  
+}
+
+
 
 
 void fabonacci(int N){
@@ -29,24 +67,6 @@ void fabonacci(int N){
   }
   
 }
-
-
-
-
-
-
-int main() {
-  int arr[] = {1, 2, 3, 4, 5}; 
-  int len = sizeof(arr)/sizeof(arr[0]);
-  // secondMax(arr, len);
-  // fintMissing(arr, len, 6);
-  fabonacci(1);
-  return 0; 
-  
-}
-
-
-
 
 
 void fintMissing(int arr[], int len, int N){
@@ -82,14 +102,6 @@ void resverseArray(int arr[], int len){
     start++;
     end--;
   }
-}
-
-void printArray(int arr[], int len){
-  for (int i = 0; i <len; i++)
-  {
-    cout << arr[i] << " ";
-  }
-  
 }
 
 int findx(int arr[],int x, int  len){
