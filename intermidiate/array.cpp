@@ -20,7 +20,7 @@ void rotateArrayByOne(int arr[], int len){
   {
     arr[i + 1] = arr[i];
   }
-  // arr[0] = temp;
+  arr[0] = temp;
 }
 
 
