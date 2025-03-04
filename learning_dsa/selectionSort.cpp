@@ -6,10 +6,10 @@ using namespace std;
 void selectionSort(vector<int> &arr, int len)
 {
 
-  for (int i = 0; i < len; i++)
+  for (int i = 0; i < len -1 ; i++)
   {
     int min = i;
-    for (int j = i; j < len; j++)
+    for (int j = i + 1; j < len; j++)
     {
       if (arr[j] <= arr[min])
       {
@@ -36,7 +36,7 @@ int main()
 {
   vector<int> arr = {64, 25, 12, 22, 11, 3};
   int len = arr.size();
-  change(arr, len);
+  selectionSort(arr, len);
   printArray(arr, len);
   return 0;
 }
