@@ -5,18 +5,23 @@ using namespace std;
 void bubbleSort(vector<int> &arr)
 {
   int len = arr.size();
-  for (int i = 0; i < len ; i++)
+  for (int i = 0; i < len-1 ; i++)
   {
-    for (int j = 0; j < len - i; j++)
+    bool swapped = false;
+    for (int j = 0; j < len - i - 1; j++)
     {
       if (arr[j] >=  arr[j + 1])
       {
         swap(arr[j], arr[j + 1]);
+        swapped = true;
       }
     }
+    if (!swapped)
+      break;
   }
-  
 }
+
+
 
 void printArray(vector<int> arr, int len)
 {
@@ -29,7 +34,7 @@ void printArray(vector<int> arr, int len)
 
 int main()
 {
-  vector<int> arr = {64, 25, 12, 22, 11, 3};
+  vector<int> arr = {6, 2, 1, 5, 4, 3};
   int len = arr.size();
   bubbleSort(arr);
   printArray(arr, len);
