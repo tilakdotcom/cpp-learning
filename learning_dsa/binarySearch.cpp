@@ -2,6 +2,9 @@
 #include <vector>
 using namespace std;
 
+// idea way to find mid
+// mid = start + (end - start) / 2
+
 void binarySearch(vector<int> &arr, int  x)
 {
   int len = arr.size();
