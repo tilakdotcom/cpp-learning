@@ -6,25 +6,25 @@ using namespace std;
 
 int change(vector<int> &arr)
 {
-  int start = 0, end = arr.size() - 1, mid = 0;
+  int start = 0, end = arr.size() - 1, mid = 0 , small = arr[0];
 
   while (start <= end)
   {
-    mid = end + (start - end) / 2;
-    if (arr[mid] > arr[mid + 1] && arr[mid] > arr[mid - 1])
-      return mid;
-    else if (arr[mid] > arr[mid + 1])
+    mid = start + (end - start) / 2;
+    if(arr[mid] >= arr[0])
       start = mid + 1;
-    else
+    else{
+      small = arr[mid];
       end = mid - 1;
+    }
   }
 
-  return -1;
+  return small;
 }
 
 int main()
 {
-  vector<int> vec = {1, 2, 3, 4, 5, 4, 3, 2, 1};
+  vector<int> vec = {2,1};
   int num = 3;
   cout << change(vec);
   (vec, num);
