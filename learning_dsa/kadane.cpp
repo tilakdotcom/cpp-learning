@@ -1,38 +1,23 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
+#include <climits>
+
 using namespace std;
 
+int maxSubArray(vector<int>& nums) {
+    int maxSum = nums[0]; 
+    int currentSum = nums[0]; 
 
+    for (int i = 1; i < nums.size(); i++) {
+        currentSum = max(nums[i], currentSum + nums[i]);
+        maxSum = max(maxSum, currentSum);
+    }
 
-void printBitwise(){
-  int num = 10;
-  for (int i = 31; i >= 0; i--) {
-    cout << ((num >> i) & 1) << " ";
-  }
-  cout << endl;
-};
-
-
-int main(){
-  // print();
-  printBitwise();
-  return 0;
- 
+    return maxSum;
 }
 
-
-void print(){
-  vector<int> arr = {1,2,3,4,5}; 
-  for(int st = 0; st < arr.size(); st++){
-    for (int end = st ; end < arr.size(); end++)
-    {
-      for (int i = st; i <= end ; i++)
-      {
-        cout << arr[i];
-      }
-      
-    cout<< " ";
-    }
-    cout << endl;
-  }
-};
+int main() {
+    vector<int> nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+    cout << "Maximum Subarray Sum: " << maxSubArray(nums) << endl; // Output: 6
+    return 0;
+}
