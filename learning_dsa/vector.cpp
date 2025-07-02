@@ -1,57 +1,49 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
+#include <algorithm> // For sort
+
 using namespace std;
 
-void leetCode136(){
-  
-}
+int main() {
+    // Declare a vector
+    vector<int> v;
 
+    // Insert elements using push_back()
+    v.push_back(10);
+    v.push_back(5);
+    v.push_back(30);
+    v.push_back(20);
 
+    cout << "Original vector: ";
+    for (int num : v) {
+        cout << num << " ";
+    }
+    cout << endl;
 
-int main(){
-// basicVector();
-return 0;
-}
+    // Sort the vector
+    sort(v.begin(), v.end());
 
+    cout << "Sorted vector: ";
+    for (int i = 0; i < v.size(); ++i) {
+        cout << v[i] << " ";
+    }
+    cout << endl;
 
+    // Remove last element
+    v.pop_back();
 
-void staticAndDynamicVector(){
-  vector<int> daynamicVec;
-  daynamicVec.push_back(1);
-  daynamicVec.push_back(2);
-  cout << "dynaamic size of vec = " << daynamicVec.size() << endl;
+    cout << "After pop_back(): ";
+    for (int x : v) {
+        cout << x << " ";
+    }
+    cout << endl;
 
-  int staticVec[5] = {1,2,3,4,5};
-  cout << "static size of vec = " << sizeof(staticVec)/sizeof(staticVec[0]) << endl;
+    // Access an element safely
+    cout << "Element at index 1: " << v.at(1) << endl;
 
-  cout << "static size of vec = " << daynamicVec.size() << endl;
-};
+    // Clear the vector
+    v.clear();
+    cout << "Vector size after clear: " << v.size() << endl;
 
-
-void basicVector(){
- // vector<int> vec;
-  // vector<int> vec = {0,1,2,3,4,5,6,7};
-  // vector<int> vec(5 ,6);
-  vector<char> vec = {'a', 'b', 'c', 'd', 'e'};
-  // for(char a : vec){
-  //   cout << a << " ";
-  // }
-  cout << "size of vec = " <<vec.size() << endl;
-
-  vec.push_back('f');
-  vec.push_back('g');
-  cout << "size of vec after push_back = " << vec.size() << endl;
-  vec.pop_back();
-  cout << "size of vec after pop_back = " << vec.size() << endl;
-  cout << "vec front value = " << vec.front() << endl;
-  cout << "vec back value = " << vec.back() << endl;
-  cout << "vec value at = " << vec.at(3) << endl;
- 
-
-  for(char a : vec){
-    cout << a << " "; 
-  }
-  cout  << "size of vec = " << vec.size() << endl;
-  cout << "capacity of vec = " << vec.capacity() << endl;
-
+    return 0;
 }
