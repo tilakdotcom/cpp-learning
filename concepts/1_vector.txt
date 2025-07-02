@@ -1,0 +1,35 @@
+What is STL in C++?
+
+STL = Standard Template Library
+
+STL is a powerful library in C++ that provides:
+- Containers (like arrays, vectors, maps, sets)
+- Algorithms (like sort, binary search, reverse)
+- Iterators (to traverse containers)
+- Function objects (functors)
+
+It saves time, ensures performance, and avoids writing boilerplate code.
+
+Containers in STL
+- Sequence Containers – vector, list, deque, array
+- Associative Containers – set, map, multiset, multimap
+- Unordered Containers – unordered_set, unordered_map
+- Container Adapters – stack, queue, priority_queue
+
+What is vector in C++?
+
+A vector is a dynamic array provided by the STL.
+It grows automatically when needed (no need to manually manage memory).
+
+Common vector operations:
+
+| Operation         | Code                              |
+|------------------|------------------------------------|
+| Declaration       | vector<int> v;                    |
+| Add element       | v.push_back(10);                  |
+| Remove last       | v.pop_back();                     |
+| Access            | v[i] or v.at(i)                   |
+| Size              | v.size();                         |
+| Sort              | sort(v.begin(), v.end());         |
+| Iterate           | for (int x : v) cout << x;        |
+| Clear all         | v.clear();                        |
