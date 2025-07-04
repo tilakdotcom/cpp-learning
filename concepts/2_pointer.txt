@@ -1,0 +1,10 @@
+✅ What is Two Pointer Technique?
+The Two Pointer Technique is a method where you use two pointers (indices) to scan through a data structure (like an array or string) to solve problems efficiently — often reducing time from O(n²) to O(n).
+
+✅ When to Use:
+Use Case	Example Problem
+Array is sorted -->	Find a pair with a given sum
+String or array reversal -->	Reverse a string
+Removing duplicates	--> Remove duplicates from sorted array
+Merging arrays -->	Merge two sorted arrays
+Complex patterns -->	Trapping Rain Water, 3Sum, Container With Most Water
