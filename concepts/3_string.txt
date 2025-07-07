@@ -1,0 +1,93 @@
+📚 C++ Strings (with Notes + Code)
+
+✅ What is a String?
+In C++, a `string` is a sequence of characters.
+It is part of the STL (Standard Template Library) and defined in the `string` header.
+
+#include <string>
+
+✅ Common Ways to Declare Strings:
+string s = "Hello";         // Direct assignment
+string s(5, 'a');           // "aaaaa"
+string s1 = s;              // Copy constructor
+
+🔧 Common String Operations in C++
+
+| Operation                  | Example Code                          |
+|---------------------------|----------------------------------------|
+| Declare a string          | string s = "hello";                    |
+| Input with spaces         | getline(cin, s);                       |
+| Length of string          | s.length() or s.size()                 |
+| Access char               | s[0], s.at(1)                          |
+| Concatenate               | s1 + s2, s.append(s2)                  |
+| Compare strings           | s1 == s2, s1.compare(s2)               |
+| Substring                 | s.substr(pos, len)                     |
+| Find character/index      | s.find("abc"), s.rfind("abc")          |
+| Erase part of string      | s.erase(pos, len)                      |
+| Insert into string        | s.insert(pos, "abc")                   |
+| Reverse string            | reverse(s.begin(), s.end())            |
+| Convert to/from char[]    | s.c_str()                              |
+| Convert char to int       | stoi("123")                            |
+| Convert int to string     | to_string(123)                         |
+
+🧾 Example C++ Code (All-in-One):
+
+#include <iostream>
+#include <string>
+#include <algorithm> // For reverse
+using namespace std;
+
+int main() {
+    string s = "hello world";
+    cout << "Original: " << s << endl;
+
+    // Length
+    cout << "Length: " << s.length() << endl;
+
+    // Access
+    cout << "First char: " << s[0] << endl;
+
+    // Concatenation
+    string s2 = " C++";
+    s += s2;
+    cout << "After append: " << s << endl;
+
+    // Substring
+    string sub = s.substr(0, 5);
+    cout << "Substring (0-5): " << sub << endl;
+
+    // Find
+    size_t found = s.find("world");
+    if (found != string::npos)
+        cout << "\"world\" found at index: " << found << endl;
+
+    // Erase
+    s.erase(5, 6); // remove " world"
+    cout << "After erase: " << s << endl;
+
+    // Insert
+    s.insert(5, " everyone");
+    cout << "After insert: " << s << endl;
+
+    // Reverse
+    reverse(s.begin(), s.end());
+    cout << "Reversed: " << s << endl;
+
+    return 0;
+}
+
+📌 Output:
+Original: hello world
+Length: 11
+First char: h
+After append: hello world C++
+Substring (0-5): hello
+"world" found at index: 6
+After erase: hello C++
+After insert: hello everyone C++
+Reversed: ++C enoyreve olleh
+
+📎 Summary:
+- `string` in C++ is part of STL.
+- Powerful and flexible: supports many built-in methods.
+- Useful for problems involving parsing, reversing, pattern searching, etc.
