@@ -1,0 +1,85 @@
+# C++ Array notes content to be saved in a text file
+array_notes = """
+📚 Array in C++
+
+✅ What is an Array?
+An array is a fixed-size, contiguous collection of elements of the same data type.
+
+Example:
+int arr[5]; // Declaration of an array with 5 integers
+
+✅ Array Declaration & Initialization:
+int arr[5];                     // Uninitialized
+int arr2[5] = {1, 2, 3, 4, 5};  // Full initialization
+int arr3[] = {10, 20, 30};      // Compiler calculates size
+
+✅ Accessing Array Elements:
+arr[0] = 10;          // Assign value
+cout << arr[0];       // Access first element
+
+- Indexing starts from 0 and goes up to size - 1
+
+🔧 Common Array Operations:
+
+| Task                      | Code Example                         |
+|---------------------------|---------------------------------------|
+| Input array               | for (int i = 0; i < n; i++) cin >> arr[i]; |
+| Output array              | for (int i = 0; i < n; i++) cout << arr[i]; |
+| Find max/min              | *max_element(arr, arr+n);           |
+| Sort                      | sort(arr, arr+n);                   |
+| Reverse                   | reverse(arr, arr+n);                |
+
+Use <algorithm> header for STL functions.
+
+🧾 Example C++ Code: Array Example
+
+#include <iostream>
+#include <algorithm> // for sort and reverse
+using namespace std;
+
+int main() {
+    int arr[6] = {10, 50, 20, 40, 30, 60};
+
+    cout << "Original array: ";
+    for (int i = 0; i < 6; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    // Sort array
+    sort(arr, arr + 6);
+
+    cout << "Sorted array: ";
+    for (int i = 0; i < 6; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    // Reverse array
+    reverse(arr, arr + 6);
+
+    cout << "Reversed array: ";
+    for (int i = 0; i < 6; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    // Find max and min
+    cout << "Max element: " << *max_element(arr, arr + 6) << endl;
+    cout << "Min element: " << *min_element(arr, arr + 6) << endl;
+
+    return 0;
+}
+
+🧠 Output:
+Original array: 10 50 20 40 30 60 
+Sorted array: 10 20 30 40 50 60 
+Reversed array: 60 50 40 30 20 10 
+Max element: 60
+Min element: 10
+
+📎 Summary:
+- Arrays have fixed size and index-based access.
+- Use loops to input/output data.
+- STL provides tools like sort, reverse, max_element, etc.
+"""
