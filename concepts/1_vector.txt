@@ -33,3 +33,113 @@ Common vector operations:
 | Sort              | sort(v.begin(), v.end());         |
 | Iterate           | for (int x : v) cout << x;        |
 | Clear all         | v.clear();                        |
+
+
+------------------------------------------------------------
+📘 Vector Problems in C++
+
+-------------------------------------
+1️⃣ Two Sum (Using Hash Map)
+-------------------------------------
+
+#include <iostream>
+#include <unordered_map>
+#include <vector>
+using namespace std;
+
+pair<int, int> twoSum(const vector<int>& nums, int target) {
+    unordered_map<int, int> mp;
+    for (int i = 0; i < nums.size(); ++i) {
+        int complement = target - nums[i];
+        if (mp.count(complement)) {
+            return {mp[complement], i};
+        }
+        mp[nums[i]] = i;
+    }
+    return {-1, -1};
+}
+
+-------------------------------------
+2️⃣ Pair Sum (Two Pointer Technique)
+-------------------------------------
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+bool pairSum(vector<int> arr, int target) {
+    sort(arr.begin(), arr.end());
+    int left = 0, right = arr.size() - 1;
+    while (left < right) {
+        int sum = arr[left] + arr[right];
+        if (sum == target) return true;
+        else if (sum < target) left++;
+        else right--;
+    }
+    return false;
+}
+
+-------------------------------------
+3️⃣ Pair with Given Difference
+-------------------------------------
+
+#include <iostream>
+#include <vector>
+#include <unordered_set>
+using namespace std;
+
+bool hasPairWithDifference(vector<int>& nums, int diff) {
+    unordered_set<int> seen;
+    for (int num : nums) {
+        if (seen.count(num + diff) || seen.count(num - diff)) return true;
+        seen.insert(num);
+    }
+    return false;
+}
+
+-------------------------------------
+4️⃣ Move All Zeros to End (Stable Order)
+-------------------------------------
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void moveZerosToEnd(vector<int>& arr) {
+    int index = 0;
+    for (int i = 0; i < arr.size(); ++i) {
+        if (arr[i] != 0) {
+            swap(arr[i], arr[index]);
+            index++;
+        }
+    }
+}
+
+-------------------------------------
+🔁 Main Function to Run All
+-------------------------------------
+
+int main() {
+    // Two Sum
+    vector<int> nums1 = {2, 7, 11, 15};
+    auto res = twoSum(nums1, 9);
+    cout << "Two Sum Indices: " << res.first << ", " << res.second << endl;
+
+    // Pair Sum
+    vector<int> nums2 = {1, 4, 6, 2, 7};
+    cout << "Pair Sum Found: " << (pairSum(nums2, 9) ? "Yes" : "No") << endl;
+
+    // Pair with Difference
+    vector<int> nums3 = {5, 20, 3, 2, 5, 80};
+    cout << "Pair With Difference: " << (hasPairWithDifference(nums3, 78) ? "Yes" : "No") << endl;
+
+    // Move Zeros
+    vector<int> nums4 = {0, 1, 0, 3, 12};
+    moveZerosToEnd(nums4);
+    cout << "Array after moving zeros: ";
+    for (int n : nums4) cout << n << " ";
+    cout << endl;
+
+    return 0;
+}
