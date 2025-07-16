@@ -1,0 +1,74 @@
+ Split Array into Two Subarrays with Equal Sum
+✅ Problem Statement:
+Given an array of integers, determine whether it can be split into two contiguous parts such that the sum of elements in both parts is equal.
+
+✅ Example:
+yaml
+Copy
+Edit
+Input:  [1, 2, 3, 3]
+Output: Yes (Split at index 2 → [1, 2, 3] and [3])
+🧠 Key Observations:
+The array must be split at some index i, where:
+
+prefixSum = sum(arr[0] to arr[i])
+
+suffixSum = sum(arr[i+1] to arr[n-1])
+
+The total sum of the array should be even to have any chance of being split into equal halves.
+
+If we find a point where prefixSum == totalSum / 2, then the array can be split.
+
+✅ Step-by-Step Approach:
+Calculate the total sum of the array.
+
+Initialize prefixSum = 0.
+
+Traverse the array from left to right (excluding the last element).
+
+Keep adding elements to prefixSum.
+
+At every step, check:
+
+If prefixSum == totalSum - prefixSum, then the array can be split.
+
+If such a point is found, return "Yes", otherwise "No".
+
+✅ Time & Space Complexity:
+Time Complexity: O(n)
+
+Space Complexity: O(1) — only basic variables used
+
+📌 Example Walkthrough:
+makefile
+Copy
+Edit
+arr = [1, 2, 3, 3]
+totalSum = 9
+
+Traverse:
+  i=0 → prefix=1 → remaining=8 ≠ 1
+  i=1 → prefix=3 → remaining=6 ≠ 3
+  i=2 → prefix=6 → remaining=3 ≠ 6
+→ No valid split found
+swift
+Copy
+Edit
+arr = [1, 1, 1, 3, 2, 2]
+totalSum = 10
+
+Traverse:
+  i=0 → prefix=1 → remaining=9
+  i=1 → prefix=2 → remaining=8
+  i=2 → prefix=3 → remaining=7
+  i=3 → prefix=6 → remaining=4
+  i=4 → prefix=8 → remaining=2
+  i=5 → prefix=10 → remaining=0
+→ Split found at index 2 → [1, 1, 1] and [3, 2, 2]
+✅ Conclusion:
+A prefix sum technique helps solve this efficiently.
+
+No need to generate subarrays or do nested looping.
+
+Ideal for interviews and competitive programming.
+
